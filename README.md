@@ -24,4 +24,4 @@
 ### **9、打开浏览器 127.0.0.1就可以访问项目了，此时可以跟上端口，也可以修改nginx配置文件的server_name，换成一个域名** <br>
 
 ### 注意：<br>
-**docker-composer启动容器前，先获取redis、nginx 、mysql的镜像**
+**docker-composer启动容器前，先获取php5.6、redis、nginx 、mysql的镜像**
