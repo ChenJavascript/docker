@@ -6,17 +6,11 @@ MAINTAINER "胸毛仙人" <chensk.home@qq.com>
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update --fix-missing && apt-get install -y \
-    g++ autoconf bash git apt-utils libxml2-dev libcurl3-dev pkg-config \
-    && docker-php-ext-install -j$(nproc) pdo_mysql \
-    && pecl install /pecl/redis-3.0.0.tgz \
-    && docker-php-ext-enable redis \
-    && apt-get purge -y --auto-remove \
-    && rm -rf /var/cache/apt/* \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /pecl
-
-RUN curl -sS https://getcomposer.org/installer | php && \
+RUN apt-get update -y && \
+apt-get install -y git && \
+apt-get install -y unzip && \
+docker-php-ext-install -j$(nproc) pdo_mysql && \
+curl -sS https://getcomposer.org/installer | php && \
 mv composer.phar /usr/local/bin/composer && \
 composer self-update && \
 apt-get remove --purge curl -y && \
