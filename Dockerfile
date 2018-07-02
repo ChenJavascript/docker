@@ -8,7 +8,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update --fix-missing && apt-get install -y \
     g++ autoconf bash git apt-utils libxml2-dev libcurl3-dev pkg-config \
-    && docker-php-ext-install iconv pdo_mysql zip unzip \
+    && docker-php-ext-install pdo_mysql unzip \
     && pecl install /pecl/redis-3.0.0.tgz \
     && docker-php-ext-enable redis \
     && apt-get purge -y --auto-remove \
