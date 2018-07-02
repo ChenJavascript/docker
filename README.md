@@ -27,4 +27,5 @@
 `mysql -uroot -h 127.0.0.1 -P 4306 -p`
 
 ### 注意：<br>
-**docker-composer启动容器前，先获取php5.6、redis、nginx 、mysql的镜像**
+**docker-composer启动容器前，先获取php5.6、redis、nginx 、mysql的镜像**,
+**laravel链接mysql时注意要在.env里将host更改为本机ip,如果mysql版本大于等于8.0,那么要更改配置文件，否则报错，原因为8.0以上版本加密方式改变。**
