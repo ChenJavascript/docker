@@ -16,6 +16,7 @@ apt-get remove --purge curl -y && \
 apt-get clean && \
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
 
+COPY ./php.ini /usr/local/etc/php/
 RUN mkdir -p /www
 VOLUME [ "/data" ]
 WORKDIR /www

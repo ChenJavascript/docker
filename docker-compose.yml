@@ -11,7 +11,6 @@ services:
             - redis-db:redis-db
         volumes:
             - /Users/chensk/work/www:/www
-	    - ./php.ini:/usr/local/etc/php/
             - ./logs/php-fpm:/var/log/php-fpm:rw
         ports:
               - "9000:9000"
