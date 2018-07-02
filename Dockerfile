@@ -9,6 +9,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update -y && \
 apt-get install -y git && \
 apt-get install -y unzip && \
+docker-php-ext-install pdo_mysql &&\
+docker-php-ext-install imagick &&\
 curl -sS https://getcomposer.org/installer | php && \
 mv composer.phar /usr/local/bin/composer && \
 composer self-update && \
