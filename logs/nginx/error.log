@@ -1,1 +1,2 @@
 2018/06/14 15:35:47 [error] 7#7: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.20.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.20.0.4:9000", host: "127.0.0.1"
+2018/06/29 14:14:48 [error] 5#5: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.20.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.20.0.4:9000", host: "127.0.0.1"
