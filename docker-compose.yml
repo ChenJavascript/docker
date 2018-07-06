@@ -17,7 +17,6 @@ services:
         restart: always
         networks:
             - code-network
-
     nginx:
         image: nginx:1.11
         depends_on:
@@ -44,7 +43,6 @@ services:
         volumes:
             - /Users/chensk/work/www/mysql:/www
             - ./logs/mysql:/var/lib/mysql-logs:rw
-            #- /Users/chensk/work/mysql/conf.d:/etc/mysql/conf.d:ro
         environment:
             MYSQL_ROOT_PASSWORD : windows8
             MYSQL_DATABASE : chensk
@@ -61,6 +59,16 @@ services:
         volumes:
             - /Users/chensk/work/www/redis:/www
         restart: always
+        networks:
+            - code-network
+    spider:
+        image: chensk/spider:v1
+        links:
+            - mysql-db:mysql-db
+        volumes:
+            - /Users/chensk/work/www/pyspider:/data
+        restart: always
+        tty: true
         networks:
             - code-network
 networks:
