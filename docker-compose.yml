@@ -41,7 +41,7 @@ services:
         ports:
             - "4306:3306"
         volumes:
-            - /Users/chensk/work/www/mysql:/www
+            - /Users/chensk/work/www/mysql:/var/lib/mysql
             - ./logs/mysql:/var/lib/mysql-logs:rw
         environment:
             MYSQL_ROOT_PASSWORD : windows8
