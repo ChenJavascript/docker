@@ -2,7 +2,7 @@ version: '3'
 
 services:
     php5.6:
-        image: chensk/php5.6-composer:latest
+        image: chenshaokun/php5-composer-imagick:latest
         depends_on:
             - mysql-db
             - redis-db
