@@ -7,12 +7,12 @@ ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update && \
-	apt-get install -y git \
-	unzip \
-	vim \
-	libfreetype6 \
-	libfreetype6-dev \
-	libjpeg62-turbo \
+    apt-get install -y git \
+    unzip \
+    vim \
+    libfreetype6 \
+    libfreetype6-dev \
+    libjpeg62-turbo \
     libjpeg62-turbo-dev \
     mcrypt \
     libmcrypt4 \
@@ -20,10 +20,10 @@ RUN apt-get update && \
     libmhash2 \
     libpng-dev \
     zlib1g-dev \
-	&& docker-php-ext-install zip \
+    && docker-php-ext-install zip \
     && docker-php-ext-install -j$(nproc) pdo_mysql gd \
 ## 安装imagick
-	&& curl -sS 'https://www.imagemagick.org/download/ImageMagick.tar.gz' -o imagemagick.tar.gz \
+    && curl -sS 'https://www.imagemagick.org/download/ImageMagick.tar.gz' -o imagemagick.tar.gz \
     && mkdir -p /tmp/imagemagick \
     && tar -xf imagemagick.tar.gz -C /tmp/imagemagick --strip-components=1 \
     && rm -f imagemagick.tar.gz \
@@ -42,12 +42,12 @@ RUN apt-get update && \
     && docker-php-ext-install /tmp/imagick \
     && rm -r /tmp/imagick \
 ## 安装composer	    
-	&& curl -sS https://getcomposer.org/installer | php \
-	&& mv composer.phar /usr/local/bin/composer  \
-	&& composer self-update \
-	&& apt-get remove --purge curl -y \
-	&& apt-get clean \
-	&& composer config -g repo.packagist composer https://packagist.laravel-china.org 
+    && curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer  \
+    && composer self-update \
+    && apt-get remove --purge curl -y \
+    && apt-get clean \
+    && composer config -g repo.packagist composer https://packagist.laravel-china.org 
 ## 安装bcmath 扩展
 RUN set -x \
     && docker-php-source extract \
