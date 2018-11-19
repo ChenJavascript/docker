@@ -55,7 +55,7 @@ services:
     redis-db:
         image: redis:latest
         ports:
-            - "6379:6379"
+            - "6380:6379"
         volumes:
             - /home/server/work/redis:/www
         restart: always
