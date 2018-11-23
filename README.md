@@ -5,9 +5,6 @@
 ### **2、进入到dockers文件夹<br>**
 `cd dockers`<br>
 
-### **3、build一个镜像<br>**
-`docker build -t chensk/php5.6` .<br>
-
 ### **4、执行`docker-composer up -d` 启动容器,启动容器前先打开docker-composer.yml文件修改mysql容器的environment<br>**
 
 ### **5、`docker ps` 查看启动的容器，并找到php的容器id,执行下面的命令，进入到php容器内部<br>**
@@ -27,7 +24,6 @@
 `mysql -uroot -h 127.0.0.1 -P 4306 -p`
 
 ### 注意：<br>
-**docker-composer启动容器前，先获取php5.6、redis、nginx 、mysql的镜像**,
 **laravel链接mysql时注意要在.env里将host更改为本机ip,如果mysql版本大于等于8.0,那么要更改配置文件，否则报错，原因为8.0以上版本加密方式改变。**
 **scrapy框架为scrapinghub/scrapinghub-stack-scrapy:1.5-py3-latest，所以在启动在执行docker-composer up -d时要先`cd scrapy`,然后`docker build -t chensk/spider:v1`**
 **千万千万注意项目文件的权限，尽量设置成777**
