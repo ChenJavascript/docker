@@ -27,7 +27,7 @@ services:
             - "8080:80"
         volumes:
             - /home/server/work/www:/www
-            - ./racoon-nginx.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf
             - ./logs/nginx:/var/log/nginx
         ports:
               - "80:80"
